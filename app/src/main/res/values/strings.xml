@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">LollipopMaterial</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="developer">BoYuan Lee</string>
+    <string name="githubLink">https://github.com/BoYuanLee</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_dota_hero_details">DotaHeroDetailsActivity</string>
+    <string name="hero_info_title">英雄故事背景</string>
+    <string name="hero_info_content">Hero Info</string>
+    <string name="hero_usage_title">英雄定位</string>
+    <string name="hero_usage_content">Usage content</string>
+    <string name="friends_heros_title">英雄适配</string>
+    <string name="friends_heros_content">Friends Heros Content</string>
+</resources>
