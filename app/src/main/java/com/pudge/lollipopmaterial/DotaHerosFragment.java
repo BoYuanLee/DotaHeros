@@ -1,7 +1,12 @@
 package com.pudge.lollipopmaterial;
 
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -70,13 +75,20 @@ public class DotaHerosFragment extends Fragment {
         public void onBindViewHolder(ViewHolder holder, final int position) {
             holder.mTextview.setText(DotaHeros.sHerosName[position]);
 
+
             holder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
+                @SuppressLint("23")
+                @TargetApi(23)
                 public void onClick(View v) {
                     Context context = v.getContext();
                     Intent intent = new Intent(context, DotaHeroDetailsActivity.class);
                     intent.putExtra(DotaHeroDetailsActivity.POSITION, position);
-                    context.startActivity(intent);
+                    if (Build.VERSION.SDK_INT < 23) {
+                        context.startActivity(intent);
+                    } else {
+                        context.startActivity(intent, ActivityOptions.makeSceneTransitionAnimation((Activity)context).toBundle());
+                    }
                 }
             });
 
